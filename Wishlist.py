@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir("C:/Users/seung/Desktop/wish") #작업공간 주소 입력
+os.chdir("C:/Users/Silver/Desktop/코딩/Wishlist") #작업공간 주소 입력
 import pandas as pd
 import folium
 import json
@@ -8,7 +8,8 @@ with open('./skorea-municipalities-2018-geo.json',mode='rt',encoding='utf-8') as
     geo = json.loads(f.read())
     f.close() #행정구역 데이터 불러오기
 
-Df = pd.read_excel("./Wishlist.xlsx",header=None) #데이터 pandas로 읽어오기
+# Df = pd.read_excel("./Wishlist.xlsx",header=None) #데이터 pandas로 읽어오기
+Df = pd.read_csv("./Wishlist.csv",header=None) #데이터 pandas로 읽어오기
 Df = Df.rename(columns=Df.iloc[0])
 Df = Df.drop(Df.index[0])
 
